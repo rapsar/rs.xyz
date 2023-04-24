@@ -41,12 +41,6 @@ body {
 	margin: 0
 }
 
-html, body {
-  min-width: 1200px;
-  overflow-x: auto;
-}
-
-
 
 article,
 aside,
@@ -1987,4 +1981,19 @@ body {
 .work--lockup .noslider--item-right .noslider--item-image {
 	width: 200px;
 	height: 200px
+}
+
+/* Add a media query for smaller screens */
+@media (max-width: 767px) {
+    .work--lockup .noslider--item-left,
+    .work--lockup .noslider--item-right,
+    .work--lockup .noslider--item-center {
+        top: unset;
+        left: 50%;
+        right: unset;
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%);
+        display: block;
+        margin-bottom: 20px; /* Add space between the images on smaller screens */
+    }
 }
