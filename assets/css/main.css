@@ -41,7 +41,7 @@ body {
 	margin: 0
 }
 
-body {
+html, body {
   min-width: 1200px;
   overflow-x: auto;
 }
