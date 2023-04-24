@@ -41,6 +41,11 @@ body {
 	margin: 0
 }
 
+body {
+  overflow-x: auto;
+}
+
+
 article,
 aside,
 details,
