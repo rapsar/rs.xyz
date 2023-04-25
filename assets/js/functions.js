@@ -278,3 +278,39 @@ $( document ).ready(function() {
   transitionLabels();
 
 });
+
+//////////////////////////////////////////
+// added by RS
+
+    function updateMetaTag() {
+    var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    var metaViewport = document.querySelector('meta[name="viewport"]');
+
+    if (screenWidth >= 1200) {
+        metaViewport.setAttribute('content', 'width=device-width, initial-scale=1.0');
+    } else {
+        metaViewport.setAttribute('content', 'width=1200');
+    }
+}
+
+window.addEventListener('resize', updateMetaTag);
+window.addEventListener('DOMContentLoaded', updateMetaTag);
+    
+    $('.cta-link').click(function(event) {
+  event.preventDefault(); // Prevent the default link behavior
+
+  var sideNav = $('.side-nav');
+  var children = sideNav.children();
+  var curActive = sideNav.find('.is-active');
+  var curPos = children.index(curActive);
+  var nextPos = 2; // Zero-based index for the third child
+  var lastItem = children.length - 1;
+
+  if (nextPos < 0 || nextPos > lastItem) {
+    console.error('Invalid child index: No child found at the specified index');
+    return;
+  }
+
+  updateNavs(nextPos);
+  updateContent(curPos, nextPos, lastItem);
+});
