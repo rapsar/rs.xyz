@@ -316,7 +316,7 @@ $( document ).ready(function() {
   updateContent(curPos, nextPos, lastItem);
 });
   
-        $('.intro-3).click(function(event) {
+        $('.intro-3').click(function(event) {
   event.preventDefault(); // Prevent the default link behavior
 
   var sideNav = $('.side-nav');
