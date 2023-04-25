@@ -4,7 +4,7 @@ $( document ).ready(function() {
 
   // DOMMouseScroll included for firefox support
   var canScroll = true,
-      scrollController = null;
+  scrollController = null;
   $(this).on('mousewheel DOMMouseScroll', function(e){
 
     if (!($('.outer-nav').hasClass('is-vis'))) {
@@ -39,10 +39,10 @@ $( document ).ready(function() {
     if (!($(this).hasClass('is-active'))) {
 
       var $this = $(this),
-          curActive = $this.parent().find('.is-active'),
-          curPos = $this.parent().children().index(curActive),
-          nextPos = $this.parent().children().index($this),
-          lastItem = $(this).parent().children().length - 1;
+      curActive = $this.parent().find('.is-active'),
+      curPos = $this.parent().children().index(curActive),
+      nextPos = $this.parent().children().index($this),
+      lastItem = $(this).parent().children().length - 1;
 
       updateNavs(nextPos);
       updateContent(curPos, nextPos, lastItem);
@@ -54,9 +54,9 @@ $( document ).ready(function() {
   $('.cta').click(function(){
 
     var curActive = $('.side-nav').find('.is-active'),
-        curPos = $('.side-nav').children().index(curActive),
-        lastItem = $('.side-nav').children().length - 1,
-        nextPos = lastItem;
+    curPos = $('.side-nav').children().index(curActive),
+    lastItem = $('.side-nav').children().length - 1,
+    nextPos = lastItem;
 
     updateNavs(lastItem);
     updateContent(curPos, nextPos, lastItem);
@@ -65,7 +65,7 @@ $( document ).ready(function() {
 
   // swipe support for touch devices
   var targetElement = document.getElementById('viewport'),
-      mc = new Hammer(targetElement);
+  mc = new Hammer(targetElement);
   mc.get('swipe').set({ direction: Hammer.DIRECTION_VERTICAL });
   mc.on('swipeup swipedown', function(e) {
 
@@ -86,9 +86,9 @@ $( document ).ready(function() {
   function updateHelper(param) {
 
     var curActive = $('.side-nav').find('.is-active'),
-        curPos = $('.side-nav').children().index(curActive),
-        lastItem = $('.side-nav').children().length - 1,
-        nextPos = 0;
+    curPos = $('.side-nav').children().index(curActive),
+    lastItem = $('.side-nav').children().length - 1,
+    nextPos = 0;
 
     if (param.type === "swipeup" || param.keyCode === 40 || param > 0) {
       if (curPos !== lastItem) {
@@ -180,74 +180,74 @@ $( document ).ready(function() {
     $('.slider--prev, .slider--next').click(function() {
 
       var $this = $(this),
-          curLeft = $('.slider').find('.slider--item-left'),
-          curLeftPos = $('.slider').children().index(curLeft),
-          curCenter = $('.slider').find('.slider--item-center'),
-          curCenterPos = $('.slider').children().index(curCenter),
-          curRight = $('.slider').find('.slider--item-right'),
-          curRightPos = $('.slider').children().index(curRight),
-          totalWorks = $('.slider').children().length,
-          $left = $('.slider--item-left'),
-          $center = $('.slider--item-center'),
-          $right = $('.slider--item-right'),
-          $item = $('.slider--item');
+      curLeft = $('.slider').find('.slider--item-left'),
+      curLeftPos = $('.slider').children().index(curLeft),
+      curCenter = $('.slider').find('.slider--item-center'),
+      curCenterPos = $('.slider').children().index(curCenter),
+      curRight = $('.slider').find('.slider--item-right'),
+      curRightPos = $('.slider').children().index(curRight),
+      totalWorks = $('.slider').children().length,
+      $left = $('.slider--item-left'),
+      $center = $('.slider--item-center'),
+      $right = $('.slider--item-right'),
+      $item = $('.slider--item');
 
       $('.slider').animate({ opacity : 0 }, 400);
 
       setTimeout(function(){
 
-      if ($this.hasClass('slider--next')) {
-        if (curLeftPos < totalWorks - 1 && curCenterPos < totalWorks - 1 && curRightPos < totalWorks - 1) {
-          $left.removeClass('slider--item-left').next().addClass('slider--item-left');
-          $center.removeClass('slider--item-center').next().addClass('slider--item-center');
-          $right.removeClass('slider--item-right').next().addClass('slider--item-right');
-        }
-        else {
-          if (curLeftPos === totalWorks - 1) {
-            $item.removeClass('slider--item-left').first().addClass('slider--item-left');
+        if ($this.hasClass('slider--next')) {
+          if (curLeftPos < totalWorks - 1 && curCenterPos < totalWorks - 1 && curRightPos < totalWorks - 1) {
+            $left.removeClass('slider--item-left').next().addClass('slider--item-left');
             $center.removeClass('slider--item-center').next().addClass('slider--item-center');
             $right.removeClass('slider--item-right').next().addClass('slider--item-right');
           }
-          else if (curCenterPos === totalWorks - 1) {
-            $left.removeClass('slider--item-left').next().addClass('slider--item-left');
-            $item.removeClass('slider--item-center').first().addClass('slider--item-center');
-            $right.removeClass('slider--item-right').next().addClass('slider--item-right');
-          }
           else {
-            $left.removeClass('slider--item-left').next().addClass('slider--item-left');
-            $center.removeClass('slider--item-center').next().addClass('slider--item-center');
-            $item.removeClass('slider--item-right').first().addClass('slider--item-right');
+            if (curLeftPos === totalWorks - 1) {
+              $item.removeClass('slider--item-left').first().addClass('slider--item-left');
+              $center.removeClass('slider--item-center').next().addClass('slider--item-center');
+              $right.removeClass('slider--item-right').next().addClass('slider--item-right');
+            }
+            else if (curCenterPos === totalWorks - 1) {
+              $left.removeClass('slider--item-left').next().addClass('slider--item-left');
+              $item.removeClass('slider--item-center').first().addClass('slider--item-center');
+              $right.removeClass('slider--item-right').next().addClass('slider--item-right');
+            }
+            else {
+              $left.removeClass('slider--item-left').next().addClass('slider--item-left');
+              $center.removeClass('slider--item-center').next().addClass('slider--item-center');
+              $item.removeClass('slider--item-right').first().addClass('slider--item-right');
+            }
           }
-        }
-      }
-      else {
-        if (curLeftPos !== 0 && curCenterPos !== 0 && curRightPos !== 0) {
-          $left.removeClass('slider--item-left').prev().addClass('slider--item-left');
-          $center.removeClass('slider--item-center').prev().addClass('slider--item-center');
-          $right.removeClass('slider--item-right').prev().addClass('slider--item-right');
         }
         else {
-          if (curLeftPos === 0) {
-            $item.removeClass('slider--item-left').last().addClass('slider--item-left');
-            $center.removeClass('slider--item-center').prev().addClass('slider--item-center');
-            $right.removeClass('slider--item-right').prev().addClass('slider--item-right');
-          }
-          else if (curCenterPos === 0) {
+          if (curLeftPos !== 0 && curCenterPos !== 0 && curRightPos !== 0) {
             $left.removeClass('slider--item-left').prev().addClass('slider--item-left');
-            $item.removeClass('slider--item-center').last().addClass('slider--item-center');
+            $center.removeClass('slider--item-center').prev().addClass('slider--item-center');
             $right.removeClass('slider--item-right').prev().addClass('slider--item-right');
           }
           else {
-            $left.removeClass('slider--item-left').prev().addClass('slider--item-left');
-            $center.removeClass('slider--item-center').prev().addClass('slider--item-center');
-            $item.removeClass('slider--item-right').last().addClass('slider--item-right');
+            if (curLeftPos === 0) {
+              $item.removeClass('slider--item-left').last().addClass('slider--item-left');
+              $center.removeClass('slider--item-center').prev().addClass('slider--item-center');
+              $right.removeClass('slider--item-right').prev().addClass('slider--item-right');
+            }
+            else if (curCenterPos === 0) {
+              $left.removeClass('slider--item-left').prev().addClass('slider--item-left');
+              $item.removeClass('slider--item-center').last().addClass('slider--item-center');
+              $right.removeClass('slider--item-right').prev().addClass('slider--item-right');
+            }
+            else {
+              $left.removeClass('slider--item-left').prev().addClass('slider--item-left');
+              $center.removeClass('slider--item-center').prev().addClass('slider--item-center');
+              $item.removeClass('slider--item-right').last().addClass('slider--item-right');
+            }
           }
         }
-      }
 
-    }, 400);
+      }, 400);
 
-    $('.slider').animate({ opacity : 1 }, 400);
+      $('.slider').animate({ opacity : 1 }, 400);
 
     });
 
@@ -276,83 +276,81 @@ $( document ).ready(function() {
   outerNav();
   workSlider();
   transitionLabels();
-  
+
   /////////////////////////////////////////////added RS
-      $('.intro-1').click(function(event) {
-  event.preventDefault(); // Prevent the default link behavior
+  // $('.intro-1').click(function(event) {
+  //   event.preventDefault(); // Prevent the default link behavior
+  //
+  //   var sideNav = $('.side-nav');
+  //   var children = sideNav.children();
+  //   var curActive = sideNav.find('.is-active');
+  //   var curPos = children.index(curActive);
+  //   var nextPos = 1; // Zero-based index for the third child
+  //   var lastItem = children.length - 1;
+  //
+  //   if (nextPos < 0 || nextPos > lastItem) {
+  //     console.error('Invalid child index: No child found at the specified index');
+  //     return;
+  //   }
+  //
+  //   updateNavs(nextPos);
+  //   updateContent(curPos, nextPos, lastItem);
+  // });
+  //
+  // $('.intro-2').click(function(event) {
+  //   event.preventDefault(); // Prevent the default link behavior
+  //
+  //   var sideNav = $('.side-nav');
+  //   var children = sideNav.children();
+  //   var curActive = sideNav.find('.is-active');
+  //   var curPos = children.index(curActive);
+  //   var nextPos = 2; // Zero-based index for the third child
+  //   var lastItem = children.length - 1;
+  //
+  //   if (nextPos < 0 || nextPos > lastItem) {
+  //     console.error('Invalid child index: No child found at the specified index');
+  //     return;
+  //   }
+  //
+  //   updateNavs(nextPos);
+  //   updateContent(curPos, nextPos, lastItem);
+  // });
+  //
+  // $('.intro-3').click(function(event) {
+  //   event.preventDefault(); // Prevent the default link behavior
+  //
+  //   var sideNav = $('.side-nav');
+  //   var children = sideNav.children();
+  //   var curActive = sideNav.find('.is-active');
+  //   var curPos = children.index(curActive);
+  //   var nextPos = 3; // Zero-based index for the third child
+  //   var lastItem = children.length - 1;
+  //
+  //   if (nextPos < 0 || nextPos > lastItem) {
+  //     console.error('Invalid child index: No child found at the specified index');
+  //     return;
+  //   }
+  //
+  //   updateNavs(nextPos);
+  //   updateContent(curPos, nextPos, lastItem);
+  // });
 
-  var sideNav = $('.side-nav');
-  var children = sideNav.children();
-  var curActive = sideNav.find('.is-active');
-  var curPos = children.index(curActive);
-  var nextPos = 1; // Zero-based index for the third child
-  var lastItem = children.length - 1;
-
-  if (nextPos < 0 || nextPos > lastItem) {
-    console.error('Invalid child index: No child found at the specified index');
-    return;
-  }
-
-  updateNavs(nextPos);
-  updateContent(curPos, nextPos, lastItem);
-});
-  
-        $('.intro-2').click(function(event) {
-  event.preventDefault(); // Prevent the default link behavior
-
-  var sideNav = $('.side-nav');
-  var children = sideNav.children();
-  var curActive = sideNav.find('.is-active');
-  var curPos = children.index(curActive);
-  var nextPos = 2; // Zero-based index for the third child
-  var lastItem = children.length - 1;
-
-  if (nextPos < 0 || nextPos > lastItem) {
-    console.error('Invalid child index: No child found at the specified index');
-    return;
-  }
-
-  updateNavs(nextPos);
-  updateContent(curPos, nextPos, lastItem);
-});
-  
-        $('.intro-3').click(function(event) {
-  event.preventDefault(); // Prevent the default link behavior
-
-  var sideNav = $('.side-nav');
-  var children = sideNav.children();
-  var curActive = sideNav.find('.is-active');
-  var curPos = children.index(curActive);
-  var nextPos = 3; // Zero-based index for the third child
-  var lastItem = children.length - 1;
-
-  if (nextPos < 0 || nextPos > lastItem) {
-    console.error('Invalid child index: No child found at the specified index');
-    return;
-  }
-
-  updateNavs(nextPos);
-  updateContent(curPos, nextPos, lastItem);
-});
-  
 
 });
 
 //////////////////////////////////////////
 // added by RS
 
-    function updateMetaTag() {
-    var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-    var metaViewport = document.querySelector('meta[name="viewport"]');
+function updateMetaTag() {
+  var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+  var metaViewport = document.querySelector('meta[name="viewport"]');
 
-    if (screenWidth >= 1200) {
-        metaViewport.setAttribute('content', 'width=device-width, initial-scale=1.0');
-    } else {
-        metaViewport.setAttribute('content', 'width=1200');
-    }
+  if (screenWidth >= 1200) {
+    metaViewport.setAttribute('content', 'width=device-width, initial-scale=1.0');
+  } else {
+    metaViewport.setAttribute('content', 'width=1200');
+  }
 }
 
 window.addEventListener('resize', updateMetaTag);
 window.addEventListener('DOMContentLoaded', updateMetaTag);
-    
-
