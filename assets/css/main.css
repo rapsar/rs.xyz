@@ -2088,7 +2088,7 @@ body {
 
 .work--lockup .slider-publi--item-center .slider-publi--item-image {
 	width: 300px;
-	height: 300px
+	height: 400px /*was 300*/
 }
 
 .work--lockup .slider-publi--next,
