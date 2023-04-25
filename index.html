@@ -387,42 +387,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
 <script src="assets/js/functions-min.js"></script>
-  
-  <script>
-    function updateMetaTag() {
-    var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-    var metaViewport = document.querySelector('meta[name="viewport"]');
-
-    if (screenWidth >= 1200) {
-        metaViewport.setAttribute('content', 'width=device-width, initial-scale=1.0');
-    } else {
-        metaViewport.setAttribute('content', 'width=1200');
-    }
-}
-
-window.addEventListener('resize', updateMetaTag);
-window.addEventListener('DOMContentLoaded', updateMetaTag);
-    
-    $('.cta-link').click(function(event) {
-  event.preventDefault(); // Prevent the default link behavior
-
-  var sideNav = $('.side-nav');
-  var children = sideNav.children();
-  var curActive = sideNav.find('.is-active');
-  var curPos = children.index(curActive);
-  var nextPos = 2; // Zero-based index for the third child
-  var lastItem = children.length - 1;
-
-  if (nextPos < 0 || nextPos > lastItem) {
-    console.error('Invalid child index: No child found at the specified index');
-    return;
-  }
-
-  updateNavs(nextPos);
-  updateContent(curPos, nextPos, lastItem);
-});
-
-</script>
+<script src="assets/js/functions.js"></script> <!--added RS-->
   
 </body>
 </html>
