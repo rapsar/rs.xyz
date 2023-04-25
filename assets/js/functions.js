@@ -82,39 +82,39 @@ $( document ).ready(function() {
 
   });
 
-  // determine scroll, swipe, and arrow key direction
-  function updateHelper(param) {
-
-    var curActive = $('.side-nav').find('.is-active'),
-    curPos = $('.side-nav').children().index(curActive),
-    lastItem = $('.side-nav').children().length - 1,
-    nextPos = 0;
-
-    if (param.type === "swipeup" || param.keyCode === 40 || param > 0) {
-      if (curPos !== lastItem) {
-        nextPos = curPos + 1;
-        updateNavs(nextPos);
-        updateContent(curPos, nextPos, lastItem);
-      }
-      else {
-        updateNavs(nextPos);
-        updateContent(curPos, nextPos, lastItem);
-      }
-    }
-    else if (param.type === "swipedown" || param.keyCode === 38 || param < 0){
-      if (curPos !== 0){
-        nextPos = curPos - 1;
-        updateNavs(nextPos);
-        updateContent(curPos, nextPos, lastItem);
-      }
-      else {
-        nextPos = lastItem;
-        updateNavs(nextPos);
-        updateContent(curPos, nextPos, lastItem);
-      }
-    }
-
-  }
+  // // determine scroll, swipe, and arrow key direction
+  // function updateHelper(param) {
+  // 
+  //   var curActive = $('.side-nav').find('.is-active'),
+  //   curPos = $('.side-nav').children().index(curActive),
+  //   lastItem = $('.side-nav').children().length - 1,
+  //   nextPos = 0;
+  // 
+  //   if (param.type === "swipeup" || param.keyCode === 40 || param > 0) {
+  //     if (curPos !== lastItem) {
+  //       nextPos = curPos + 1;
+  //       updateNavs(nextPos);
+  //       updateContent(curPos, nextPos, lastItem);
+  //     }
+  //     else {
+  //       updateNavs(nextPos);
+  //       updateContent(curPos, nextPos, lastItem);
+  //     }
+  //   }
+  //   else if (param.type === "swipedown" || param.keyCode === 38 || param < 0){
+  //     if (curPos !== 0){
+  //       nextPos = curPos - 1;
+  //       updateNavs(nextPos);
+  //       updateContent(curPos, nextPos, lastItem);
+  //     }
+  //     else {
+  //       nextPos = lastItem;
+  //       updateNavs(nextPos);
+  //       updateContent(curPos, nextPos, lastItem);
+  //     }
+  //   }
+  // 
+  // }
 
   // sync side and outer navigations
   function updateNavs(nextPos) {
@@ -278,62 +278,62 @@ $( document ).ready(function() {
   transitionLabels();
 
   /////////////////////////////////////////////added RS
-  // $('.intro-1').click(function(event) {
-  //   event.preventDefault(); // Prevent the default link behavior
-  //
-  //   var sideNav = $('.side-nav');
-  //   var children = sideNav.children();
-  //   var curActive = sideNav.find('.is-active');
-  //   var curPos = children.index(curActive);
-  //   var nextPos = 1; // Zero-based index for the third child
-  //   var lastItem = children.length - 1;
-  //
-  //   if (nextPos < 0 || nextPos > lastItem) {
-  //     console.error('Invalid child index: No child found at the specified index');
-  //     return;
-  //   }
-  //
-  //   updateNavs(nextPos);
-  //   updateContent(curPos, nextPos, lastItem);
-  // });
-  //
-  // $('.intro-2').click(function(event) {
-  //   event.preventDefault(); // Prevent the default link behavior
-  //
-  //   var sideNav = $('.side-nav');
-  //   var children = sideNav.children();
-  //   var curActive = sideNav.find('.is-active');
-  //   var curPos = children.index(curActive);
-  //   var nextPos = 2; // Zero-based index for the third child
-  //   var lastItem = children.length - 1;
-  //
-  //   if (nextPos < 0 || nextPos > lastItem) {
-  //     console.error('Invalid child index: No child found at the specified index');
-  //     return;
-  //   }
-  //
-  //   updateNavs(nextPos);
-  //   updateContent(curPos, nextPos, lastItem);
-  // });
-  //
-  // $('.intro-3').click(function(event) {
-  //   event.preventDefault(); // Prevent the default link behavior
-  //
-  //   var sideNav = $('.side-nav');
-  //   var children = sideNav.children();
-  //   var curActive = sideNav.find('.is-active');
-  //   var curPos = children.index(curActive);
-  //   var nextPos = 3; // Zero-based index for the third child
-  //   var lastItem = children.length - 1;
-  //
-  //   if (nextPos < 0 || nextPos > lastItem) {
-  //     console.error('Invalid child index: No child found at the specified index');
-  //     return;
-  //   }
-  //
-  //   updateNavs(nextPos);
-  //   updateContent(curPos, nextPos, lastItem);
-  // });
+  $('.intro-1').click(function(event) {
+    event.preventDefault(); // Prevent the default link behavior
+  
+    var sideNav = $('.side-nav');
+    var children = sideNav.children();
+    var curActive = sideNav.find('.is-active');
+    var curPos = children.index(curActive);
+    var nextPos = 1; // Zero-based index for the third child
+    var lastItem = children.length - 1;
+  
+    if (nextPos < 0 || nextPos > lastItem) {
+      console.error('Invalid child index: No child found at the specified index');
+      return;
+    }
+  
+    updateNavs(nextPos);
+    updateContent(curPos, nextPos, lastItem);
+  });
+  
+  $('.intro-2').click(function(event) {
+    event.preventDefault(); // Prevent the default link behavior
+  
+    var sideNav = $('.side-nav');
+    var children = sideNav.children();
+    var curActive = sideNav.find('.is-active');
+    var curPos = children.index(curActive);
+    var nextPos = 2; // Zero-based index for the third child
+    var lastItem = children.length - 1;
+  
+    if (nextPos < 0 || nextPos > lastItem) {
+      console.error('Invalid child index: No child found at the specified index');
+      return;
+    }
+  
+    updateNavs(nextPos);
+    updateContent(curPos, nextPos, lastItem);
+  });
+  
+  $('.intro-3').click(function(event) {
+    event.preventDefault(); // Prevent the default link behavior
+  
+    var sideNav = $('.side-nav');
+    var children = sideNav.children();
+    var curActive = sideNav.find('.is-active');
+    var curPos = children.index(curActive);
+    var nextPos = 3; // Zero-based index for the third child
+    var lastItem = children.length - 1;
+  
+    if (nextPos < 0 || nextPos > lastItem) {
+      console.error('Invalid child index: No child found at the specified index');
+      return;
+    }
+  
+    updateNavs(nextPos);
+    updateContent(curPos, nextPos, lastItem);
+  });
 
 
 });
