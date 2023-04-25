@@ -58,7 +58,7 @@
           <li class="l-section section section--is-active">
             <div class="intro">
               <div class="intro--banner">
-                <h1>Rapha&euml;l<br>Sarfati<br>PhD</h1>
+                <h1>Rapha&euml;l<br>Sarfati,<br>PhD</h1>
                 <button class="cta">say hi
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
                   <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
@@ -70,7 +70,7 @@
                 <img src="assets/img/raphael-intro-01.png" alt="Welcome">
               </div>
               <div class="intro--options">
-                <a href="#0">
+                <a href="#" class="cta-link">
                   <h3>scientist</h3>
                   <p>I am a physicist with a wide curiosity for natural and cultural phenomena</p>
                 </a>
@@ -402,6 +402,26 @@
 
 window.addEventListener('resize', updateMetaTag);
 window.addEventListener('DOMContentLoaded', updateMetaTag);
+    
+    $('.cta-link').click(function(event) {
+  event.preventDefault(); // Prevent the default link behavior
+
+  var sideNav = $('.side-nav');
+  var children = sideNav.children();
+  var curActive = sideNav.find('.is-active');
+  var curPos = children.index(curActive);
+  var nextPos = 2; // Zero-based index for the third child
+  var lastItem = children.length - 1;
+
+  if (nextPos < 0 || nextPos > lastItem) {
+    console.error('Invalid child index: No child found at the specified index');
+    return;
+  }
+
+  updateNavs(nextPos);
+  updateContent(curPos, nextPos, lastItem);
+});
+
 </script>
   
 </body>
