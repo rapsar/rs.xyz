@@ -570,7 +570,7 @@ body {
 	color: #fff;
 	font-weight: 700;
 	text-transform: uppercase;
-	background-color: #0f33ff;
+	background-color: #4BB; /*#0f33ff;*/
 	border: none;
 	opacity: 0;
 	visibility: hidden;
