@@ -1997,3 +1997,133 @@ body {
         margin-bottom: 20px; /* Add space between the images on smaller screens */
     }
 }
+
+/*-------------------------------------------------------------*/
+
+.work--lockup .slider-publi {
+	position: relative;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	width: 80%;
+	margin: 0 auto;
+	padding: 0;
+	list-style: none
+}
+
+.work--lockup .slider-publi--item {
+	position: absolute;
+	display: none;
+	text-align: center
+}
+
+.work--lockup .slider-publi--item a {
+	text-decoration: none;
+	color: #858585
+}
+
+.work--lockup .slider-publi--item-title {
+	margin-top: 10px;
+	font-size: 12px;
+	font-weight: 700;
+	text-transform: uppercase
+}
+
+.work--lockup .slider-publi--item-description {
+	display: none;
+	max-width: 250px;
+	margin: 0 auto
+}
+
+.work--lockup .slider-publi--item-image {
+	width: 150px;
+	height: 150px;
+	margin: 0 auto;
+	border-radius: 10%;
+	overflow: hidden
+}
+
+.work--lockup .slider-publi--item-image img {
+	width: 100%
+}
+
+.work--lockup .slider-publi--item-left {
+	top: 50%;
+	left: 0;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	display: block
+}
+
+.work--lockup .slider-publi--item-right {
+	top: 50%;
+	right: 0;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	display: block
+}
+
+.work--lockup .slider-publi--item-center {
+	position: relative;
+	top: 30px;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+	display: block
+}
+
+.work--lockup .slider-publi--item-center a {
+	color: #fff
+}
+
+.work--lockup .slider-publi--item-center .slider-publi--item-title {
+	margin-top: 25px;
+	font-size: 16px
+}
+
+.work--lockup .slider-publi--item-center .slider-publi--item-description {
+	display: block
+}
+
+.work--lockup .slider-publi--item-center .slider-publi--item-image {
+	width: 300px;
+	height: 300px
+}
+
+.work--lockup .slider-publi--next,
+.work--lockup .slider-publi--prev {
+	position: absolute;
+	top: 160px;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	width: 50px;
+	height: 50px;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	background-color: #282828;
+	border-radius: 50%;
+	cursor: pointer
+}
+
+.work--lockup .slider-publi--next svg,
+.work--lockup .slider-publi--prev svg {
+	width: 20px;
+	fill: #fff
+}
+
+.work--lockup .slider-publi--next {
+	right: 0
+}
+
+.work--lockup .slider-publi--prev {
+	left: 0
+}
