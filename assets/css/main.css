@@ -2038,7 +2038,7 @@ body {
 
 .work--lockup .slider-publi--item-image {
 	width: 150px;
-	height: 150px;
+	height: 200px; /*was 150*/
 	margin: 0 auto;
 	border-radius: 10%;
 	overflow: hidden
