@@ -277,8 +277,27 @@ $( document ).ready(function() {
   workSlider();
   transitionLabels();
   
-  //added RS
-      $('.cta-link').click(function(event) {
+  /////////////////////////////////////////////added RS
+      $('.intro-1').click(function(event) {
+  event.preventDefault(); // Prevent the default link behavior
+
+  var sideNav = $('.side-nav');
+  var children = sideNav.children();
+  var curActive = sideNav.find('.is-active');
+  var curPos = children.index(curActive);
+  var nextPos = 1; // Zero-based index for the third child
+  var lastItem = children.length - 1;
+
+  if (nextPos < 0 || nextPos > lastItem) {
+    console.error('Invalid child index: No child found at the specified index');
+    return;
+  }
+
+  updateNavs(nextPos);
+  updateContent(curPos, nextPos, lastItem);
+});
+  
+        $('.intro-2').click(function(event) {
   event.preventDefault(); // Prevent the default link behavior
 
   var sideNav = $('.side-nav');
@@ -286,6 +305,25 @@ $( document ).ready(function() {
   var curActive = sideNav.find('.is-active');
   var curPos = children.index(curActive);
   var nextPos = 2; // Zero-based index for the third child
+  var lastItem = children.length - 1;
+
+  if (nextPos < 0 || nextPos > lastItem) {
+    console.error('Invalid child index: No child found at the specified index');
+    return;
+  }
+
+  updateNavs(nextPos);
+  updateContent(curPos, nextPos, lastItem);
+});
+  
+        $('.intro-3).click(function(event) {
+  event.preventDefault(); // Prevent the default link behavior
+
+  var sideNav = $('.side-nav');
+  var children = sideNav.children();
+  var curActive = sideNav.find('.is-active');
+  var curPos = children.index(curActive);
+  var nextPos = 3; // Zero-based index for the third child
   var lastItem = children.length - 1;
 
   if (nextPos < 0 || nextPos > lastItem) {
