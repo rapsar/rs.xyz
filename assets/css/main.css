@@ -1363,10 +1363,10 @@ body {
 	left: 0;
 	width: 100%;
 	height: 100%;
- 	background-image: url("../img/MacStone-2787-1280x720.jpg"); /*url("../img/contact-visual.png");*/
+/*  	background-image: url("../img/MacStone-2787-1280x720.jpg"); /*url("../img/contact-visual.png");
 	background-position: center;
 	background-size: cover;
-	background-repeat: no-repeat
+	background-repeat: no-repeat */
 }
 
 .contact--lockup {
@@ -1392,6 +1392,17 @@ body {
   	background-size: cover;
   	background-repeat: no-repeat; */
 }
+
+.contact .l-section {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/MacStone-2787-1280x720.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 
 
 @media (max-width: 1180px) {
