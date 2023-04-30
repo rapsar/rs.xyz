@@ -349,7 +349,7 @@ function updateMetaTag() {
   if (screenWidth >= 1200) {
     metaViewport.setAttribute('content', 'width=device-width, initial-scale=1.0');
   } else {
-    metaViewport.setAttribute('content', 'width=1200');
+    metaViewport.setAttribute('content',  'width=1200, height=720');
   }
 }
 
