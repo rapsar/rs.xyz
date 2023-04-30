@@ -2074,6 +2074,11 @@ body {
 	width: 100%
 }
 
+.work--lockup .slider-publi--item-image embed {
+  width: 100%;
+}
+
+
 .work--lockup .slider-publi--item-left {
 	top: 50%;
 	left: 0;
