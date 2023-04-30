@@ -1389,17 +1389,11 @@ body {
 	margin: 0 auto;
 }
 
-.contact-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+.l-section-contact {
   background-image: url("../img/MacStone-2787-1280x720.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  z-index: -1;
 }
 
 
