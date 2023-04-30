@@ -1387,15 +1387,12 @@ body {
 	-ms-flex-pack: end;
 	justify-content: flex-end;
 	margin: 0 auto;
-/* 	background-image: url("../img/MacStone-2787-1280x720.jpg"); */
+	background-image: url("../img/MacStone-2787-1280x720.jpg");
+  	background-position: center;
+  	background-size: cover;
+  	background-repeat: no-repeat;
 }
 
-.contact-section {
-  background-image: url("../img/MacStone-2787-1280x720.jpg"); /*url("../img/contact-visual.png");*/
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
 
 @media (max-width: 1180px) {
 	.contact--lockup {
