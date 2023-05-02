@@ -2066,8 +2066,9 @@ body {
 	width: 150px;
 	height: 200px; /*was 150*/
 	margin: 0 auto;
-	border-radius: 5%;
-	overflow: hidden
+	border-radius: 2%;
+	overflow: hidden;
+	background-color: white;
 }
 
 .work--lockup .slider-publi--item-image img {
