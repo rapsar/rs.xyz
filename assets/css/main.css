@@ -667,7 +667,7 @@ body {
 }
 
 .side-nav li.is-active {
-	color: #0f33ff;
+	color: #4BB; /*#0f33ff;*/
 	-webkit-transition: color .4s ease-in-out;
 	transition: color .4s ease-in-out
 }
@@ -1743,7 +1743,7 @@ body {
 	-webkit-transform: translateZ(0) translateX(0) rotateY(0deg);
 	transform: translateZ(0) translateX(0) rotateY(0deg);
 	min-height: 100%;
-	outline: 30px solid #0f33ff;
+	outline: 30px solid #4BB; /*#0f33ff;*/
 	-webkit-transition: -webkit-transform .4s;
 	transition: -webkit-transform .4s;
 	transition: transform .4s;
@@ -1771,7 +1771,7 @@ body {
 .effect-rotate-left--animate .container {
 	-webkit-transform: translateZ(-1800px) translateX(-50%) rotateY(45deg);
 	transform: translateZ(-1800px) translateX(-50%) rotateY(45deg);
-	outline: 30px solid #0f33ff
+	outline: 30px solid #4BB /*#0f33ff*/
 }
 
 .outer-nav {
@@ -1845,7 +1845,7 @@ body {
 	width: 110%;
 	height: 15px;
 	opacity: 0;
-	background-color: #0f33ff
+	background-color: #4BB /*#0f33ff*/
 }
 
 .outer-nav>li.is-active::before {
