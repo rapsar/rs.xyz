@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>photos</title>
+    <link rel="stylesheet" href="/css/tufte.css" />
+    <link rel="stylesheet" href="/css/latex.css" />
+    <style>
+        /* Masonry layout using CSS columns */
+        .masonry {
+            column-count: 3;
+            column-gap: 1rem;
+        }
+
+        .masonry img {
+            width: 100%;
+            break-inside: avoid;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 800px) {
+            .masonry {
+                column-count: 2;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .masonry {
+                column-count: 1;
+            }
+        }
+    </style>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="some pictures I took">
+    <meta name="keywords" content="photos">
+    <meta name="author" content="Raphael Sarfati">
+    <!--     <link rel="icon" href="favicon.ico" type="image/x-icon"> -->
+
+    <!-- For Android Chrome -->
+    <link rel="icon" type="image/png" sizes="192x192" href="/ico/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/ico/android-chrome-512x512.png">
+    <!-- For Apple devices -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/ico/apple-touch-icon.png">
+    <!-- For other devices and browsers -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/ico/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/ico/favicon-32x32.png">
+    <!-- For Internet Explorer and legacy browsers -->
+    <link rel="shortcut icon" href="/ico/favicon.ico">
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/ico/site.webmanifest">
+
+</head>
+
+
+<body>
+    <article>
+
+        <h1>some photos</h1>
+
+        <section>
+            <div class="masonry">
+
+                <img src="/img/photos/DSC00394.JPG" alt="colorado">
+                <img src="/img/photos/IMG_5261.jpeg" alt="utah">
+                <img src="/img/photos/IMG_5335.jpeg" alt="firefly larva">
+                <img src="/img/photos/IMG_5569.jpeg" alt="flowers">
+                <img src="/img/photos/IMG_5226.jpeg" alt="nevada">
+                <!-- <img src="img/photos/IMG_5421.jpeg" alt="water snake"> -->
+                <img src="/img/photos/IMG_5181.jpeg" alt="badwater basin">
+                <img src="/img/photos/IMG_5167.jpeg" alt="death valley">
+                <img src="/img/photos/IMG_5392.jpeg" alt="colorado">
+                <img src="/img/photos/IMG_5440.jpeg" alt="Photo 3">
+                <img src="/img/photos/IMG_5550.jpeg" alt="heron">
+                <img src="/img/photos/IMG_5527.jpeg" alt="Photo 3">
+                <img src="/img/photos/IMG_5304.jpeg" alt="Photo 3">
+                <img src="/img/photos/IMG_5279.jpeg" alt="Photo 3">
+                <!-- Add more <img> tags as needed -->
+
+            </div>
+        </section>
+
+    </article>
+
+    <footer> <small>&copy; Raphaël Sarfati</small> </footer>
+    
+</body>
+
+</html>

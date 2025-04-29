@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raphael Sarfati - Scientist & Explorer</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/sunlit.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+
+    <!-- For Android Chrome -->
+    <link rel="icon" type="image/png" sizes="192x192" href="ico/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="ico/android-chrome-512x512.png">
+    <!-- For Apple devices -->
+    <link rel="apple-touch-icon" sizes="180x180" href="ico/apple-touch-icon.png">
+    <!-- For other devices and browsers -->
+    <link rel="icon" type="image/png" sizes="16x16" href="ico/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="ico/favicon-32x32.png">
+    <!-- For Internet Explorer and legacy browsers -->
+    <link rel="shortcut icon" href="ico/favicon.ico">
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="ico/site.webmanifest">
+</head>
+
+<body>
+
+    <div id="dappled-light">
+
+        <div id="glow"></div>
+        <div id="glow-bounce"></div>
+        <div class="perspective">
+            <div id="leaves">
+                <svg style="width: 0; height: 0; position: absolute;">
+                    <defs>
+                        <filter id="wind" x="-20%" y="-20%" width="140%" height="140%">
+                            <feTurbulence type="fractalNoise" numOctaves="2" seed="1">
+                                <animate attributeName="baseFrequency" dur="16s" keyTimes="0;0.33;0.66;1"
+                                    values="0.005 0.003;0.01 0.009;0.008 0.004;0.005 0.003" repeatCount="indefinite" />
+                            </feTurbulence>
+                            <feDisplacementMap in="SourceGraphic">
+                                <animate attributeName="scale" dur="20s" keyTimes="0;0.25;0.5;0.75;1"
+                                    values="45;55;75;55;45" repeatCount="indefinite" />
+                            </feDisplacementMap>
+                        </filter>
+                    </defs>
+                </svg>
+            </div>
+            <div id="blinds">
+                <div class="shutters">
+                    <div class="shutter"></div>
+                    <div class="shutter"></div>
+                    <div class="shutter"></div>
+                    <div class="shutter"></div>
+                    <div class="shutter"></div>
+                    <div class="shutter"></div>
+                    <div class="shutter"></div>
+                    <div class="shutter"></div>
+                    <div class="shutter"></div>
+                    <div class="shutter"></div>
+                    <div class="shutter"></div>
+                    <div class="shutter"></div>
+                    <div class="shutter"></div>
+                    <div class="shutter"></div>
+                    <div class="shutter"></div>
+                    <div class="shutter"></div>
+                    <div class="shutter"></div>
+                    <div class="shutter"></div>
+                    <div class="shutter"></div>
+                    <div class="shutter"></div>
+                    <div class="shutter"></div>
+                    <div class="shutter"></div>
+                    <div class="shutter"></div>
+                </div>
+                <div class="vertical">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+        </div>
+        <div id="progressive-blur">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <header>
+            <div class="profile-info">
+                <h1>Raphaël Sarfati</h1>
+                <div class="subtitle">scientist & explorer</div>
+                <div class="social-icons">
+                    <a href="docs/rscv.pdf" class="icon" title="CV" target="_blank"><i class="fas fa-file-alt"></i></a>
+                    <a href="https://scholar.google.com/citations?user=9aaGkZQAAAAJ&hl=en" class="icon"
+                        title="Google Scholar">
+                        <i class="fas fa-graduation-cap"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/raphaelsarfati/" class="icon" title="LinkedIn"
+                        target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/rapsar" class="icon" title="GitHub" target="_blank"><i
+                            class="fab fa-github"></i></a>
+                    <a href="mailto:raphael.sarfati@aya.yale.edu" class="icon" title="Email" target="_blank"><i
+                            class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <img src="img/index/profile01.jpg" alt="Profile Picture" class="profile-img">
+        </header>
+
+        <div class="categories">
+            <a href="/pages/physics.html" class="category" style="
+            background-image:
+              linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+              url('img/index/romanesco.jpg');
+            background-size: cover;
+            background-position: center;">physics</a>
+            <a href="/pages/ai.html" class="category" style="background-image: url('img/index/ai_image.png');"> </a>
+            <a href="/pages/animals.html" class="category"
+                style="background-image: url('img/index/starlings.jpg');">animals</a>
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <div class="chat-box-container">
+            <a href="https://chatgpt.com/g/g-909s4tFwn-who-is-raphael" target="_blank" class="chat-box">
+                <span class="chat-box-title"></span>
+                <span class="chat-box-label">Chat with my GPT</span>
+                <div>
+                    <span class="chat-box-text">For a more interactive overview of my background and interests, you can chat with my custom GPT...</span>
+                    <span class="cursor"></span>
+                </div>
+            </a>
+        </div>
+        <br>
+        <br>
+        <div class="sections">
+            <a href="/pages/books.html" class="section">some<br>books</a>
+            <a href="/pages/photos.html" class="section">some<br>photos</a>
+            <a href="/pages/writings.html" class="section">some<br>writings</a>
+            <a href="/pages/places.html" class="section">some<br>places</a>
+        </div>
+    </div>
+</body>
+
+<script src="/js/sunlit.js"></script>
+
+</html>

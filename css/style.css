@@ -1,0 +1,373 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Luciole', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* For different font weights/styles, add separate @font-face declarations */
+@font-face {
+  font-family: 'Luciole';
+  src: url('fonts/Luciole-Regular/Luciole-Regular.woff2') format('woff2'),
+       url('fonts/Luciole-Regular/Luciole-Regular.woff') format('woff'),
+       url('fonts/Luciole-Regular/Luciole-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* Helps prevent FOIT (Flash of Invisible Text) */
+}
+
+@font-face {
+  font-family: 'Luciole';
+  src: url('fonts/Luciole-Bold/Luciole-Bold.woff2') format('woff2'),
+       url('fonts/Luciole-Bold/Luciole-Bold.woff') format('woff'),
+       url('fonts/Luciole-Bold/Luciole-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Luciole';
+  src: url('fonts/Luciole-Italic/Luciole-Italic.woff2') format('woff2'),
+       url('fonts/Luciole-Italic/Luciole-Italic.woff') format('woff'),
+       url('fonts/Luciole-Italic/Luciole-Italic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+body {
+    background: #242f3e;
+    background-size: cover;
+    /* color: #ffe680; */
+    color: #db7a2a;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 60px;
+}
+
+.profile-info {
+    flex: 1;
+}
+
+.profile-img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    /* border: 3px solid #ffe680; */
+    border: 3px solid #db7a2a;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+    z-index: 1;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.icon {
+    font-size: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.icon:hover {
+    background-color: rgba(255, 230, 128, 0.4);
+    transform: translateY(-3px);
+}
+
+.categories {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.category {
+    aspect-ratio: 1/1;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: normal;
+    /* text-transform: uppercase; */
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    /* border: 1px solid rgba(255, 255, 255, 0.2); */
+    position: relative;
+    overflow: hidden;
+    color: #ed6833;
+}
+
+.category span {
+    position: relative;
+    z-index: 2; /* Ensures text appears above the overlay */
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* Text shadow for better readability */
+}
+
+.category:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.category:hover::before {
+    background-color: rgba(0, 0, 0, 0.6); /* Darker overlay on hover */
+}
+
+.chat-box-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.chat-box {
+    width: 420px;
+    padding: 25px 30px;
+    background-color: #1e2126; /* Dark terminal-like background */
+    border-radius: 8px;
+    position: relative;
+    font-weight: normal;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(222, 126, 47, 0.3);
+    color: white;
+    font-family: monospace, 'Courier New', Courier;
+    text-align: left; /* Terminal text is usually left-aligned */
+    display: block; /* Changed from flex */
+}
+
+/* Terminal dots at the top */
+.chat-box:before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    width: 12px;
+    height: 12px;
+    background-color: #ff5f56; /* Red dot */
+    border-radius: 50%;
+}
+
+.chat-box:after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 35px;
+    width: 12px;
+    height: 12px;
+    background-color: #ffbd2e; /* Yellow dot */
+    border-radius: 50%;
+}
+
+/* Green dot as a pseudo-element of a span */
+.chat-box-title {
+    position: absolute;
+    top: 10px;
+    left: 55px;
+    width: 12px;
+    height: 12px;
+    background-color: #27c93f; /* Green dot */
+    border-radius: 50%;
+}
+
+/* Title text */
+.chat-box-label {
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    margin: 0;
+    padding: 0;
+    line-height: 12px;
+    font-size: 16px;
+    color: #aaa;
+    text-align: right;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-weight: normal;
+    z-index: 2;
+}
+
+/* Message text */
+.chat-box-text {
+    display: inline-block;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #eee;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    margin-top: 1.5rem;  /* added spacing below the title */
+}
+
+/* Blinking cursor */
+.cursor {
+    display: inline-block;
+    width: 10px;
+    height: 20px;
+    background-color: #eee;
+    margin-left: 2px;
+    animation: blink 1s step-end infinite;
+    vertical-align: middle;
+}
+
+@keyframes blink {
+    from, to { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.chat-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.sections {
+    display: flex;
+    justify-content: center; /* Changed from space-between to center */
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: center;
+    flex-wrap: wrap; /* Allows items to wrap if needed */
+}
+
+.section {
+    padding: 15px 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+    position: relative;
+    margin: 0 15px; /* Added horizontal margin instead of using space-between */
+    transform: translateY(0); /* Base position for animation */
+    color: #ffe680;
+}
+
+/* Add varied vertical positions to create disorganization */
+.section:nth-child(1) {
+    transform: translateY(-5px);
+}
+
+.section:nth-child(2) {
+    transform: translateY(7px);
+}
+
+.section:nth-child(3) {
+    transform: translateY(-3px);
+}
+
+.section:nth-child(4) {
+    transform: translateY(4px);
+}
+
+.section:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #ffe680;
+    transition: all 0.3s ease;
+}
+
+.section:hover:after {
+    width: 70%;
+    left: 15%;
+}
+
+/* Add a slight rotation to enhance the disorganized feel */
+.section:nth-child(1) {
+    transform: translateY(-5px) rotate(-1deg);
+}
+
+.section:nth-child(2) {
+    transform: translateY(7px) rotate(1deg);
+}
+
+.section:nth-child(3) {
+    transform: translateY(-3px) rotate(0.5deg);
+}
+
+.section:nth-child(4) {
+    transform: translateY(4px) rotate(-0.5deg);
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    .categories {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .categories {
+        grid-template-columns: 1fr;
+    }
+
+    .sections {
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+    }
+
+    .section {
+        width: 45%;
+    }
+}
