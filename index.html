@@ -23,7 +23,24 @@
     <link rel="manifest" href="ico/site.webmanifest">
 </head>
 
+
 <body>
+    <script>
+      function isMobile() {
+        return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Windows Phone|Opera Mini/i.test(navigator.userAgent);
+      }
+      if (isMobile()) {
+        // Disable heavy animations on mobile
+        var dapple = document.getElementById('dappled-light');
+        if (dapple) dapple.style.display = 'none';
+        document.body.style.backgroundColor = '#1E1C27'; 
+      } else {
+        // Load desktop animation
+        var script = document.createElement('script');
+        script.src = '/js/sunlit.js';
+        document.body.appendChild(script);
+      }
+    </script>
 
     <div id="dappled-light">
 
@@ -143,7 +160,5 @@
         </div>
     </div>
 </body>
-
-<script src="/js/sunlit.js"></script>
 
 </html>
