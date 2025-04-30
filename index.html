@@ -26,23 +26,28 @@
 
 <body>
     <script>
-      function isMobile() {
-        return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Windows Phone|Opera Mini/i.test(navigator.userAgent);
-      }
-      if (isMobile()) {
-        // Disable heavy animations on mobile
-        var dapple = document.getElementById('dappled-light');
-        if (dapple) dapple.style.display = 'none';
-        document.body.style.backgroundColor = '#1E1C27'; 
-      } else {
-        // Load desktop animation
-        var script = document.createElement('script');
-        script.src = '/js/sunlit.js';
-        document.body.appendChild(script);
-      }
+        function isMobile() {
+            return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Windows Phone|Opera Mini/i
+                .test(navigator.userAgent);
+        }
+
+        if (isMobile()) {
+            document.body.style.backgroundColor = '#1E1C27';
+        } else {
+            // Load markup + animation on desktop
+            fetch('/partials/dappled-light.html')
+                .then(res => res.text())
+                .then(html => {
+                    document.body.insertAdjacentHTML('afterbegin', html);
+                    let script = document.createElement('script');
+                    script.src = '/js/sunlit.js';
+                    document.body.appendChild(script);
+                })
+                .catch(console.error);
+        }
     </script>
 
-    <div id="dappled-light">
+    <!-- <div id="dappled-light">
 
         <div id="glow"></div>
         <div id="glow-bounce"></div>
@@ -101,7 +106,7 @@
             <div></div>
             <div></div>
         </div>
-    </div>
+    </div> -->
 
     <div class="container">
         <header>
@@ -132,7 +137,7 @@
               url('img/index/romanesco.jpg');
             background-size: cover;
             background-position: center;">physics</a>
-            <a href="/pages/ai.html" class="category" style="background-image: url('img/index/ai_image.png');"> </a>
+            <a href="/pages/ai.html" class="category" style="background-image: url('img/index/ai_image.jpg');"> </a>
             <a href="/pages/animals.html" class="category"
                 style="background-image: url('img/index/starlings.jpg');">animals</a>
         </div>
@@ -145,7 +150,8 @@
                 <span class="chat-box-title"></span>
                 <span class="chat-box-label">Chat with my GPT</span>
                 <div>
-                    <span class="chat-box-text">For a more interactive overview of my background and interests, you can chat with my custom GPT...</span>
+                    <span class="chat-box-text">For a more interactive overview of my background and interests, you can
+                        chat with my custom GPT...</span>
                     <span class="cursor"></span>
                 </div>
             </a>
